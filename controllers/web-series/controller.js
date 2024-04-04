@@ -2,6 +2,7 @@ const httpStatus = require("http-status");
 const { WebSeries } = require("../../models");
 
 const getWebSeries = async (req, res) => {
+  // Get accept header
   const acceptHeader =
     req.header("Accept") || "application/vnd.example.v1+json";
 

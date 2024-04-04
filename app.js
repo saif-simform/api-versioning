@@ -4,7 +4,7 @@ const CONFIG = require("./config/config");
 const mongoose = require("mongoose");
 const routesV1 = require("./routes/v1.routes");
 const routesV2 = require("./routes/v2.routes");
-const queryRoutes = require("./routes/query.routes");
+const routes = require("./routes");
 const httpStatus = require("http-status");
 
 // DATABASE Connection
@@ -29,7 +29,7 @@ app.use("/api/v1", routesV1);
 app.use("/api/v2", routesV2);
 
 //Load query based routes
-app.use("/api", queryRoutes);
+app.use("/api", routes);
 
 app.use("/", function (req, res) {
   return res

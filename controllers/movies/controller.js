@@ -2,8 +2,10 @@ const httpStatus = require("http-status");
 const { Movies } = require("../../models");
 
 const getMovies = async (req, res) => {
+   
+  //Get header details
   const acceptVersion = req.header("Accespt-Version") || "1.0";
- 
+
   if (acceptVersion === "1.0") {
     const data = await Movies.find({ isActive: true }).select(
       "name link description directors actor"
